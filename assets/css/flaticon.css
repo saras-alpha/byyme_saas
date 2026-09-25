@@ -45,3 +45,6 @@ font-style: normal;
 .flaticon-foward:before { content: "\f10f"; }
 .flaticon-quote:before { content: "\f110"; }
 .flaticon-diamond:before { content: "\f111"; }
+.flaticon-robot:before {
+    content: "\f103";
+}

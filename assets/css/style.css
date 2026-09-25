@@ -2537,6 +2537,7 @@ Sticky Menu
   display: inline-block;
   transition: 0.3s all ease-in-out;
   box-shadow: 0px 0px 9px 0px rgba(15, 54, 131, 0.07);
+  padding-top: 10px;
 }
 
 .ei-footer-widget .ei-footer-social a:nth-child(1) {
