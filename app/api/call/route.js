@@ -19,7 +19,7 @@ export async function POST(request) {
     const authToken = process.env.PLIVO_AUTH_TOKEN;
     const from = process.env.DESTINATION_PHONE_NUMBER;
     const publicUrl = process.env.NEXT_PUBLIC_APP_URL;
-    
+  
 
     if (!authId || !authToken || !from || !publicUrl) {
       return Response.json(
