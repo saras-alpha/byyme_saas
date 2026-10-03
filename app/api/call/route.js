@@ -3,7 +3,6 @@ import plivo from "plivo";
 export async function POST(request) {
   try {
     const body = await request.json();
-
     const { phoneNumber } = body;
 
     if (!phoneNumber) {
@@ -19,7 +18,7 @@ export async function POST(request) {
     const authId = process.env.PLIVO_AUTH_ID;
     const authToken = process.env.PLIVO_AUTH_TOKEN;
     const from = process.env.PLIVO_FROM_NUMBER;
-    const publicUrl = process.env.PIPECAT_PUBLIC_URL;
+    const publicUrl = process.env.NEXT_PUBLIC_APP_URL;
 
     if (!authId || !authToken || !from || !publicUrl) {
       return Response.json(
@@ -37,12 +36,15 @@ export async function POST(request) {
     );
 
     const answerUrl =
-      `${publicUrl}api/plivo/answer`;
+      `${publicUrl}/api/plivo/answer`;
 
     const response = await client.calls.create(
       from,
       phoneNumber,
-      answerUrl
+      answerUrl,
+      {
+        answerMethod: "POST",
+      }
     );
 
     console.log("Plivo call:", response);
